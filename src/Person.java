@@ -20,16 +20,9 @@ public class Person {
         persArray[2] = new Person("Сидоров Сидр", "ЗавХоз", "sidsidor@mailbox.com", 898666432, 22000, 21);
         persArray[3] = new Person("Кириллов Кирилл", "Дантист", "kirkirillov@mailbox.com", 898777432, 500000, 35);
         persArray[4] = new Person("Зинаидова Зинаида", "ГлавБух", "ZinZina@mailbox.com", 898888432, 34500, 30);
-
-        for (int i = 4; i >= 0; i--) {
-            System.out.println(persArray[i]);
-        }
-
     }
 
     public void info() {
         System.out.println("ФИО: " + name + ", Должность: " + position + ", email: " + email + ", Телефон: " + phoneNumber + ", Зарплата: " + salary + ", Возраст: " + age);
-
-
     }
 }
