@@ -1,5 +1,5 @@
 public class Animal {
-    private String name;
+    protected String name;
     private int maxRun;
     private int maxSwim;
     private static int animalCount;
