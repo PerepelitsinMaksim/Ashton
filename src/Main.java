@@ -44,5 +44,20 @@ public class Main {
             }
         }
         System.out.println("Остаток еды в миске: " + bowl.getFood());
+
+        System.out.println("\nЗадание 2");
+
+        Shape circle = new Circle(45, "Зеленый", "Синий");
+        Shape rectangle = new Rectangle(76, 34, "Желтый", "Красный");
+        Shape triangle = new Triangle(10, 5, 10, "Малиновый", "Голубой");
+
+        System.out.println("\nКруг:");
+        circle.printCharacteristics();
+
+        System.out.println("\nПрямоугольник:");
+        rectangle.printCharacteristics();
+
+        System.out.println("\nТреугольник:");
+        triangle.printCharacteristics();
     }
 }
