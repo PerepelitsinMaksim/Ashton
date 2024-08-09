@@ -1,39 +1,41 @@
-public class Cat extends Animal {
-    protected boolean satiety;
+class Cat extends Animal {
+    private static final int maxRun = 200;
+    private static int catCount = 0;
+    private boolean satiety;
     protected int appetite;
-    private static int catCount;
 
     public Cat(String name, int appetite) {
-        super(name, 200, 0);
-        this.appetite = appetite;
-        satiety = false;
+        super(name);
         catCount++;
-/*
-        Cat[] catsArray = new Cat[5];
-        catsArray[0] = new Cat("Kitty1", 10);
-        catsArray[1] = new Cat("Kitty2", 10);
-        catsArray[2] = new Cat("SmallCat", 20);
-        catsArray[3] = new Cat("BigCat", 500);
-        catsArray[4] = new Cat("glutton", 10);
-        int food = 20;
+        this.satiety = false;
+        this.appetite = appetite;
+    }
 
-        for (Cat cat : catsArray) {
-            if (cat.appetite < food) {
-                cat.satiety = true;
-                food = food - cat.appetite;
-            }
-            System.out.println(name + cat.satiety);
+    public void run(int distance) {
+        if (distance <= maxRun) {
+            System.out.println(name + " пробежал " + distance + "м.");
+        } else {
+            System.out.println(name + " не может пробежать " + distance + "м.");
         }
-
- */
     }
 
-        public void countC () {
-            System.out.println("Всего кошек: " + catCount);
+    public void swim(int distance) {
+        System.out.println(name + " не умеет плавать");
+    }
+
+    public void eat(Bowl bowl, int amount) {
+        if (bowl.decreaseFood(amount)) {
+            this.satiety = true;
+        } else {
+            System.out.println(name + " голодный. Ему не хватило еды");
         }
-    public void eat(Plate p) {
-        p.decreaseFood(appetite);
-    }
     }
 
+    public boolean isFull() {
+        return satiety;
+    }
 
+    public static int getCatCount() {
+        return catCount;
+    }
+}

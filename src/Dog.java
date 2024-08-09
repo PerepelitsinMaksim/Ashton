@@ -1,10 +1,30 @@
-public class Dog extends Animal{
-    private static int dogCount;
-    public Dog(String name){
-        super(name, 500, 10);
+class Dog extends Animal {
+    private static final int maxRun = 500;
+    private static final int maxSwim = 10;
+    private static int dogCount = 0;
+
+    public Dog(String name) {
+        super(name);
         dogCount++;
     }
-    public void countD() {
-        System.out.println("Всего собак: " + dogCount);
+
+    public void run(int distance) {
+        if (distance <= maxRun) {
+            System.out.println(name + " пробежал " + distance + "м.");
+        } else {
+            System.out.println(name + " не может пробежать " + distance + "м.");
+        }
+    }
+
+    public void swim(int distance) {
+        if (distance <= maxSwim) {
+            System.out.println(name + " проплыл " + distance + "м.");
+        } else {
+            System.out.println(name + " не может проплыть " + distance + "м.");
+        }
+    }
+
+    public static int getDogCount() {
+        return dogCount;
     }
 }

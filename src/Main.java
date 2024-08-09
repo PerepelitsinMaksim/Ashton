@@ -4,27 +4,45 @@ public class Main {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         int add;
-        Cat[] catsArray = new Cat[5];
-        catsArray[0] = new Cat("Тишка", 10);
-        catsArray[1] = new Cat("Васька", 10);
-        catsArray[2] = new Cat("Мурзик", 20);
-        catsArray[3] = new Cat("Яшка", 50);
-        catsArray[4] = new Cat("Обжора", 10);
-        Plate plate = new Plate(50);
-        plate.info();
-        for (Cat allCat : catsArray) {
-            if (allCat.satiety == false && allCat.appetite < plate.food) {
-                allCat.eat(plate);
-                allCat.satiety = true;
-                System.out.println("Сытость кота " + allCat.name + " = " + allCat.satiety);
-            } else {
-                System.out.println("Сытость кота " + allCat.name + " = " + allCat.satiety + " - добавьте ему еды!");
-            }
+        Dog dog1 = new Dog("Шарик");
+        Dog dog2 = new Dog("Бобик");
+
+        Cat cat1 = new Cat("Василий", 10);
+        Cat cat2 = new Cat("Тишка", 20);
+        Cat cat3 = new Cat("Яшка", 30);
+        Cat cat4 = new Cat("Мурзик", 40);
+        Cat cat5 = new Cat("Обжорка", 50);
+
+        System.out.println("Всего животных: " + Animal.getAnimalCount());
+        System.out.println("Всего собак: " + Dog.getDogCount());
+        System.out.println("Всего котов: " + Cat.getCatCount());
+
+        dog1.run(501);
+        dog2.swim(5);
+
+        cat3.run(100);
+        cat4.swim(10);
+
+        Bowl bowl = new Bowl(100);
+        Cat[] cats = {cat1, cat2, cat3, cat4, cat5};
+
+        for (Cat cat : cats) {
+            cat.eat(bowl, cat.appetite);
+            System.out.println("Сытость кота " + cat.getName() + ": " + cat.isFull());
         }
-        plate.info();
+        System.out.println("Остаток еды в миске: " + bowl.getFood());
+
         System.out.println("Сколько добавить в миску еды?");
         add = sc.nextInt();
-        plate.increaseFood(add);
-        plate.info();
+        bowl.addFood(add);
+        System.out.println("В миске: " + bowl.getFood());
+
+        for (Cat cat : cats) {
+            if (!cat.isFull()) {
+                cat.eat(bowl, cat.appetite);
+                System.out.println("Сытость кота " + cat.getName() + ": " + cat.isFull());
+            }
+        }
+        System.out.println("Остаток еды в миске: " + bowl.getFood());
     }
 }
