@@ -1,11 +1,11 @@
 class Cat extends Animal {
-    private static final int maxRun = 200;
     private static int catCount = 0;
     private boolean satiety;
     protected int appetite;
 
     public Cat(String name, int appetite) {
         super(name);
+        super.maxRun = 200;
         catCount++;
         this.satiety = false;
         this.appetite = appetite;

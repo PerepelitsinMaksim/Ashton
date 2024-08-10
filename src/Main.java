@@ -19,7 +19,6 @@ public class Main {
 
         dog1.run(501);
         dog2.swim(5);
-
         cat3.run(100);
         cat4.swim(10);
 
@@ -49,7 +48,7 @@ public class Main {
 
         Shape circle = new Circle(45, "Зеленый", "Синий");
         Shape rectangle = new Rectangle(76, 34, "Желтый", "Красный");
-        Shape triangle = new Triangle(10, 5, 10, "Малиновый", "Голубой");
+        Shape triangle = new Triangle(4, 6, 8, "Малиновый", "Голубой");
 
         System.out.println("\nКруг:");
         circle.printCharacteristics();

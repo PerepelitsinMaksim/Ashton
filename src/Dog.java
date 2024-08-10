@@ -1,10 +1,10 @@
 class Dog extends Animal {
-    private static final int maxRun = 500;
-    private static final int maxSwim = 10;
     private static int dogCount = 0;
 
     public Dog(String name) {
         super(name);
+        super.maxRun = 500;
+        super.maxSwim = 10;
         dogCount++;
     }
 
