@@ -6,7 +6,7 @@ class Bowl {
     }
 
     public boolean decreaseFood(int amount) {
-        if (food <= 0) {
+        if (amount <= 0) {
             System.out.println("Количество еды должно быть > 0");
             return false;
         }

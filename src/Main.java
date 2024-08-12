@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
+        System.out.println("Задание 1");
         int add;
         Dog dog1 = new Dog("Шарик");
         Dog dog2 = new Dog("Бобик");
@@ -22,7 +23,7 @@ public class Main {
         cat3.run(100);
         cat4.swim(10);
 
-        Bowl bowl = new Bowl(100);
+        Bowl bowl = new Bowl(80);
         Cat[] cats = {cat1, cat2, cat3, cat4, cat5};
 
         for (Cat cat : cats) {
