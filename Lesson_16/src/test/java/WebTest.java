@@ -78,9 +78,9 @@ public class WebTest {
     @DisplayName("Проверка плейсхолдеров на вкладке Оплата услуг")
     public void paymentForServicesTest() {
         Data data = new Data(driver);
-        assertEquals(data.getPhoneNumberPH(), "Номер телефона");
-        assertEquals(data.getSumPH(), "Сумма");
-        assertEquals(data.getEmailPH(), "E-mail для отправки чека");
+        assertEquals("Номер телефона", data.getPhoneNumberPH());
+        assertEquals("Сумма", data.getSumPH());
+        assertEquals("E-mail для отправки чека", data.getEmailPH());
     }
 
     @Test
@@ -88,9 +88,9 @@ public class WebTest {
     public void homeInternetTest() {
         Data data = new Data(driver);
         data.openHomeInternet();
-        assertEquals(data.getInternetPhonePH(), "Номер абонента");
-        assertEquals(data.getInternetSumPH(), "Сумма");
-        assertEquals(data.getInternetEmailPH(), "E-mail для отправки чека");
+        assertEquals("Номер абонента", data.getInternetPhonePH());
+        assertEquals("Сумма", data.getInternetSumPH());
+        assertEquals("E-mail для отправки чека", data.getInternetEmailPH());
     }
 
     @Test
@@ -98,9 +98,9 @@ public class WebTest {
     public void installmentTest() {
         Data data = new Data(driver);
         data.openInstallment();
-        assertEquals(data.getInstalmentNumber44PH(), "Номер счета на 44");
-        assertEquals(data.getInstalmentSumPH(), "Сумма");
-        assertEquals(data.getInstalmentEmailPH(), "E-mail для отправки чека");
+        assertEquals("Номер счета на 44", data.getInstalmentNumber44PH());
+        assertEquals("Сумма", data.getInstalmentSumPH());
+        assertEquals("E-mail для отправки чека", data.getInstalmentEmailPH());
     }
 
     @Test
@@ -108,9 +108,9 @@ public class WebTest {
     public void arrearsTest() {
         Data data = new Data(driver);
         data.openArrears();
-        assertEquals(data.getArrearsScore2073PH(), "Номер счета на 2073");
-        assertEquals(data.getArrearsSumPH(), "Сумма");
-        assertEquals(data.getArrearsEmailPH(), "E-mail для отправки чека");
+        assertEquals("Номер счета на 2073", data.getArrearsScore2073PH());
+        assertEquals("Сумма", data.getArrearsSumPH());
+        assertEquals("E-mail для отправки чека", data.getArrearsEmailPH());
     }
 
     @Test
