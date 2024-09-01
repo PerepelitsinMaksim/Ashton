@@ -2,7 +2,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.nullValue;
 
 public class RestApiTest {
 
@@ -24,7 +25,13 @@ public class RestApiTest {
                 .body("args.foo2", equalTo("bar2"))
                 .body("headers.host", equalTo("postman-echo.com"))
                 .body("headers.x-forwarded-proto",equalTo("http"))
+                .body("headers.x-request-start",notNullValue())
                 .body("headers.connection",equalTo("close"))
+                .body("headers.x-amzn-trace-id",notNullValue())
+                .body("headers.user-agent",equalTo("Apache-HttpClient/4.5.13 (Java/11.0.23)"))
+                .body("headers.accept",equalTo("*/*"))
+                .body("headers.cache-control",nullValue())
+                .body("headers.accept-encoding",equalTo("gzip,deflate"))
                 .body("url",equalTo("http://postman-echo.com/get?foo1=bar1&foo2=bar2"));
     }
 
@@ -43,7 +50,13 @@ public class RestApiTest {
                 .body("data.foo2", equalTo("bar2"))
                 .body("headers.host", equalTo("postman-echo.com"))
                 .body("headers.x-forwarded-proto",equalTo("http"))
+                .body("headers.x-request-start",notNullValue())
                 .body("headers.connection",equalTo("close"))
+                .body("headers.x-amzn-trace-id",notNullValue())
+                .body("headers.user-agent",equalTo("Apache-HttpClient/4.5.13 (Java/11.0.23)"))
+                .body("headers.accept",equalTo("*/*"))
+                .body("headers.cache-control",nullValue())
+                .body("headers.accept-encoding",equalTo("gzip,deflate"))
                 .body("url",equalTo("http://postman-echo.com/post"));
     }
     @Test
@@ -61,7 +74,15 @@ public class RestApiTest {
                 .body("form.foo2", equalTo("bar2"))
                 .body("headers.host", equalTo("postman-echo.com"))
                 .body("headers.x-forwarded-proto",equalTo("http"))
+                .body("headers.x-request-start",notNullValue())
                 .body("headers.connection",equalTo("close"))
+                .body("headers.content-length",equalTo("19"))
+                .body("headers.x-amzn-trace-id",notNullValue())
+                .body("headers.user-agent",equalTo("Apache-HttpClient/4.5.13 (Java/11.0.23)"))
+                .body("headers.accept",equalTo("*/*"))
+                .body("headers.cache-control",nullValue())
+                .body("headers.accept-encoding",equalTo("gzip,deflate"))
+                .body("headers.content-type",equalTo("application/x-www-form-urlencoded; charset=utf-8"))
                 .body("url",equalTo("http://postman-echo.com/post"));
     }
 
@@ -80,7 +101,15 @@ public class RestApiTest {
                 .body("data.foo2", equalTo("bar2"))
                 .body("headers.host", equalTo("postman-echo.com"))
                 .body("headers.x-forwarded-proto",equalTo("http"))
+                .body("headers.x-request-start",notNullValue())
                 .body("headers.connection",equalTo("close"))
+                .body("headers.content-length",equalTo("32"))
+                .body("headers.x-amzn-trace-id",notNullValue())
+                .body("headers.content-type",equalTo("application/json"))
+                .body("headers.user-agent",equalTo("Apache-HttpClient/4.5.13 (Java/11.0.23)"))
+                .body("headers.accept",equalTo("*/*"))
+                .body("headers.cache-control",nullValue())
+                .body("headers.accept-encoding",equalTo("gzip,deflate"))
                 .body("url",equalTo("http://postman-echo.com/put"));
     }
 
@@ -98,7 +127,15 @@ public class RestApiTest {
                 .body("data.foo1", equalTo("bar1"))
                 .body("headers.host", equalTo("postman-echo.com"))
                 .body("headers.x-forwarded-proto",equalTo("http"))
+                .body("headers.x-request-start",notNullValue())
                 .body("headers.connection",equalTo("close"))
+                .body("headers.content-length",equalTo("16"))
+                .body("headers.x-amzn-trace-id",notNullValue())
+                .body("headers.content-type",equalTo("application/json"))
+                .body("headers.user-agent",equalTo("Apache-HttpClient/4.5.13 (Java/11.0.23)"))
+                .body("headers.accept",equalTo("*/*"))
+                .body("headers.cache-control",nullValue())
+                .body("headers.accept-encoding",equalTo("gzip,deflate"))
                 .body("url",equalTo("http://postman-echo.com/patch"));
     }
 
@@ -115,7 +152,15 @@ public class RestApiTest {
                 .body("args.foo", equalTo("bar"))
                 .body("headers.host", equalTo("postman-echo.com"))
                 .body("headers.x-forwarded-proto",equalTo("http"))
+                .body("headers.x-request-start",notNullValue())
                 .body("headers.connection",equalTo("close"))
+                .body("headers.x-amzn-trace-id",notNullValue())
+                .body("headers.content-type",equalTo("application/json"))
+                .body("headers.user-agent",equalTo("Apache-HttpClient/4.5.13 (Java/11.0.23)"))
+                .body("headers.accept",equalTo("*/*"))
+                .body("headers.cache-control",nullValue())
+                .body("headers.accept-encoding",equalTo("gzip,deflate"))
+                .body("json",nullValue())
                 .body("url",equalTo("http://postman-echo.com/delete?foo=bar"));
     }
 }
